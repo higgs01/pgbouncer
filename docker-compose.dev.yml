@@ -1,0 +1,20 @@
+services:
+  pgbouncer:
+    depends_on:
+      - postgres
+    build: .
+    volumes:
+      - ./test:/etc/pgbouncer/input
+    environment:
+      POSTGRES_PASSWORD: password
+  postgres:
+    image: postgres:17
+    ports: 
+      - 6432:5432
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: password
+
+volumes:
+  pg-data:
