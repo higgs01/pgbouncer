@@ -22,5 +22,8 @@ tail -n 0 -f /var/log/pgbouncer/pgbouncer_config_watcher.txt &
 /config-watcher.sh ${PGBOUNCER_CONFIG_INPUT_DIR}/${PGBOUNCER_CONFIG_FILE} ${PGBOUNCER_CONFIG_DIR}/${PGBOUNCER_CONFIG_FILE} >> /var/log/pgbouncer/pgbouncer_config_watcher.txt &
 /config-watcher.sh ${PGBOUNCER_CONFIG_INPUT_DIR}/${PGBOUNCER_USERLIST} ${PGBOUNCER_CONFIG_DIR}/${PGBOUNCER_USERLIST} >> /var/log/pgbouncer/pgbouncer_config_watcher.txt &
 
+echo "waiting..."
+sleep 1
+
 echo "starting pgbouncer..."
 exec "$@"
