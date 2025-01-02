@@ -18,7 +18,6 @@ fi;
 INPUT_FILE=$1
 OUTPUT_FILE=$2
 
-envsubst < $INPUT_FILE > $OUTPUT_FILE
 echo "watching $INPUT_FILE for changes"
 
 onchange() {
