@@ -1,4 +1,4 @@
-FROM alpine:3.21.0 AS build
+FROM alpine:3.21.2 AS build
 ARG PGBOUNCER_VERSION=1.23.1
 
 RUN apk add --no-cache gcc make libevent-dev pkgconfig autoconf libc-dev libtool autoconf automake openssl-dev
@@ -12,7 +12,7 @@ RUN ./configure --prefix=/usr/local
 RUN make
 RUN make install
 
-FROM alpine:3.21.0
+FROM alpine:3.21.2
 
 RUN adduser --disabled-password pgbouncer
 
