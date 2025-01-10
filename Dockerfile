@@ -1,5 +1,5 @@
 FROM alpine:3.21.2 AS build
-ARG PGBOUNCER_VERSION=1.23.1
+ARG PGBOUNCER_VERSION=1.24.0
 
 RUN apk add --no-cache gcc make libevent-dev pkgconfig autoconf libc-dev libtool autoconf automake openssl-dev
 
